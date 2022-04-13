@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <script src="actions.js"></script>
+  </head>
+  <body onload="init()">
+    <div id="main">
+      <h1>vr haptics debugger</h1>
+      <div id="connection">
+        <h2>connection</h2>
+        <label>url:</label>
+        <input id="url" />
+        <button onclick="connect()">connect</button>
+      </div>
+      <div>
+        <h2>airbag pressure control</h2>
+        <button onclick="inflate()">inflate</button>
+        <button onclick="deflate()">deflate</button>
+      </div>
+      <div>
+        <h2>simulate footsteps</h2>
+        <label>duration:</label>
+        <input id="duration" value="0.5" />
+      </div>
+      <div>
+        <button onclick="step(true)">left step</button>
+        <button onclick="step(false)">sight step</button>
+      </div>
+    </div>
+  </body>
+</html>
