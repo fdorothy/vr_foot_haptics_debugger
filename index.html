@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="actions.js"></script>
+    <title>vr haptics debugger</title>
   </head>
   <body onload="init()">
     <div id="main">
@@ -13,8 +14,44 @@
       </div>
       <div>
         <h2>airbag pressure control</h2>
-        <button onclick="inflate()">inflate</button>
-        <button onclick="deflate()">deflate</button>
+        <div>
+          <label>pressure (hPa)</label>
+          <input id="pressure" value="0.0">
+        </div>
+        <div>
+          <h3>algorithmic pressure control</h3>
+          <div>
+            <label>target pressure (hPa)</label>
+            <input id="targetPressure" value="140">
+          </div>
+          <div>
+            <label>minimum pressure (hPa)</label>
+            <input id="minPressure" value="100">
+          </div>
+          <div>
+            <label>max inflation time (seconds)</label>
+            <input id="maxInflateTime1" value="10.0">
+          </div>
+          <div>
+            <button onclick="inflateTo()">inflate</button>
+            <button onclick="deflate()">deflate</button>
+          </div>
+        </div>
+        <div>
+          <h3>manual pressure control</h3>
+          <div>
+            <label>inflation time (seconds)</label>
+            <input id="inflationTime" value="1.0">
+          </div>
+          <div>
+            <label>max inflation time (seconds)</label>
+            <input id="maxInflateTime2" value="10.0">
+          </div>
+          <div>
+            <button onclick="inflate()">inflate</button>
+            <button onclick="deflate()">deflate</button>
+          </div>
+        </div>
       </div>
       <div>
         <h2>simulate footsteps</h2>
@@ -23,7 +60,7 @@
       </div>
       <div>
         <button onclick="step(true)">left step</button>
-        <button onclick="step(false)">sight step</button>
+        <button onclick="step(false)">right step</button>
       </div>
     </div>
   </body>
